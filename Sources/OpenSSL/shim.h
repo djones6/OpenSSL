@@ -203,6 +203,7 @@ static inline void RSA_set_keys(RSA *rsakey, BIGNUM *n, BIGNUM *e, BIGNUM *d, BI
 		RSA_set0_key(rsakey, n, e, d);
 		RSA_set0_factors(rsakey, p, q);
 		RSA_set0_crt_params(rsakey, dmp1, dmq1, iqmp);
+printf("OpenSSL 1.1\n");
 	#else
 		rsakey->n = n;
 		rsakey->e = e;
@@ -212,6 +213,7 @@ static inline void RSA_set_keys(RSA *rsakey, BIGNUM *n, BIGNUM *e, BIGNUM *d, BI
 		rsakey->dmp1 = dmp1;
 		rsakey->dmq1 = dmq1;
 		rsakey->iqmp = iqmp;
+printf("OpenSSL 1.0\n");
 	#endif
 }
 
